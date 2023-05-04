@@ -1,0 +1,102 @@
+.about {
+    padding-bottom: 170px;
+    position: relative;
+
+    @include mobile() {
+        padding-bottom: 70px;
+        padding-top: 30px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        background-image: url(../img/about/left.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        width: 403px;
+        height: 433px;
+        left: 0;
+        top: 0;
+
+        @include small () {
+            width: 245px;
+            height: 315px;
+        }
+
+        @include mobile() {
+            width: 143px;
+            height: 156px;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        background-image: url(../img/about/right.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 440px;
+        height: 150px;
+        right: 0;
+        bottom: 0;
+
+        @include small () {
+            width: 285px;
+            height: 115px;
+        }
+
+        @include mobile() {
+            width: 175px;
+            height: 69px;
+        }
+    }
+
+    .about-title {
+        margin-bottom: 70px;
+        text-align: center;
+    }
+
+    .about-inner {
+        display: flex;
+        padding: 34px 36px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(143, 143, 143, 0.1) 100%);
+        backdrop-filter: blur(7px);
+        border-radius: 10px;
+        gap: 30px;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1;
+
+        @include desctop () {
+            flex-direction: column;
+        }
+
+        @include mobile () {
+            padding: 15px 10px;
+        }
+    }
+
+    .about-left  {
+        max-width: 630px;
+        width: 100%;
+    }
+
+    .about-right {
+        max-width: 760px;
+        width: 100%;
+    }
+
+    .about-text {
+        margin-bottom: 22px;
+
+        @include mobile () {
+            margin-bottom: 15px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+
+}

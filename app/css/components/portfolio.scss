@@ -1,0 +1,101 @@
+.portfolio {
+    padding: 51px 0 170px;
+    //overflow: hidden;
+
+    @include desctop () {
+        padding: 51px 0 100px;
+    }
+
+    @include mobile () {
+        padding: 35px 0 70px;
+    }
+    
+    .portfolio-title {
+        margin-bottom: 70px;
+        text-align: center;
+    }
+
+    // .container{
+    //     max-width: 100%;
+    //     padding-left: 13%;
+    // }
+
+    .portfolio-wrapper {
+        //overflow: hidden;
+        padding-left: 13%;
+
+        @include mobile () {
+            padding-left: 0;
+        }
+    }
+    .portfolio-slider {
+        overflow: visible;
+        height: 463px;
+
+        @include to (1550px){
+            height: auto;
+        }
+    }
+
+    .swiper-button-next:after, 
+    .swiper-rtl .swiper-button-prev:after {
+        content: '';
+    }
+
+    .swiper-button-prev:after, 
+    .swiper-rtl .swiper-button-next:after {
+        content: '';
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        width: 86px;
+        height: 16px;
+
+        @include desctop () {
+            width: 50px;
+            height: 10px;
+        }
+    }
+
+    .swiper-pagination {
+        top: 115%;
+        display: none;
+
+        @include mobile() {
+            display: block;
+        }
+
+        @include to (450px) {
+            //bottom: -40%;  
+        }
+    }
+
+    .swiper-pagination-bullet {
+        width: 15px;
+        height: 15px;
+        background-color: #eee; 
+
+        &.swiper-pagination-bullet-active {
+            background-color: #FFC83A;
+        }
+    }
+
+    .portfolio-navigation  {
+        position: relative;
+        max-width: 275px;
+        height: 20px;
+        width: 100%;
+        margin: 0 auto;
+        bottom: -12%;
+
+        @include desctop () {
+            max-width: 200px;
+        }
+
+        @include mobile () {
+            display: none;
+        }
+    }
+
+}

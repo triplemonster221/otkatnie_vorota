@@ -1,0 +1,460 @@
+.offerOk {
+    position: relative;
+    background: url(../img/thanks/bg.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    height: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    padding: 150px 0 70px;
+
+
+    @include to(1880px){
+
+        &::after {
+            content: '';
+            position: absolute;
+            background: rgba($color: #000000, $alpha: .3);
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: block !important;
+        }
+        
+    }
+
+    @include mobile(){
+        padding: 70px 0 15px;
+    }
+
+   
+
+    &::before {
+        display: none;
+    }
+
+    .section-title {
+        max-width: 938px;
+        width: 100%;
+        margin-bottom: 40px; 
+
+        font-size: 52px;
+        letter-spacing: 1px;
+        line-height: 60px;
+        //color: #fc2e65;
+        font-weight: 400;
+        font-family: 'MullerRegular', sans-serif;
+
+        @include mobile (){
+            font-size: 25px;
+        }
+
+        #thanksName {
+            display: block;
+            font-size: 52px;
+            letter-spacing: 1px;
+            line-height: 60px;
+            //color: #fc2e65;
+            font-weight: 800;
+            font-family: 'MullerExtraBold', sans-serif;
+            @include mobile (){
+                font-size: 25px !important;
+            } 
+        }
+
+    }
+
+    ////////////////////////
+    /// 
+    /// 
+
+    .thanks-subtitle {
+        //max-width: 727px;
+        //width: 100%;
+        font-size: 20px;
+        line-height: 33px;
+        margin-bottom: 42px;
+
+        
+
+        @include mobile (){
+            margin-bottom: 20px;
+            line-height: 25px;
+        }
+    }
+
+
+    ////////////////////////
+    /// 
+    /// 
+    
+    
+    .about {
+        display: flex;
+        // align-items: center;
+        margin-bottom: 30px;
+        max-width: 840px;
+        width: 100%;
+        column-gap: 80px;
+
+        @include mobile (){
+            margin-bottom: 30px;
+            flex-direction: column;
+            row-gap: 20px;
+        }
+    }
+
+    .about-item{
+        display: flex;
+
+        @include mobile (){
+            flex-direction: column;
+            align-items: center;
+            row-gap: 10px;
+        }
+       
+    }
+
+    .about-item-img {
+        width: 80px ;
+        height: 83px;
+        margin-right: 10px;
+
+        @include mobile (){
+            margin-right: 0;
+        }
+
+        img {
+            object-fit: contain;
+        }
+    }
+
+    .mestnoPlace {
+        margin-right: 35px;
+
+        @include mobile (){
+            margin-right: 0;
+        }
+    }
+
+    .about-item-top {
+        font-size: 16px;
+        font-family: 'NunitoLight', sans-serif;
+        .row {
+            display: block;
+
+            @include mobile (){
+                display: inline;
+                text-align: center;
+            }
+        }
+
+        @include mobile (){
+            text-align: center;
+        }
+    }
+
+    .about-item-bottom {
+        font-family: 'NunitoBold', sans-serif;
+        color: #fff;
+        font-weight: 700;
+
+        @include mobile (){
+            text-align: center;
+        }
+    }
+
+   
+
+// /////////////////////
+// ////////////// 
+// //////
+
+
+    .thanks-info {
+        font-size: 16px;
+        line-height: 23px;
+        margin-bottom: 20px;
+        max-width: 626px;
+        width: 100%;
+
+        .row {
+            display: block;
+
+            @include mobile (){
+                display: inline;
+            }
+        }
+    }
+
+    .slogan_thanks-info {
+        font-size: 24px;
+        letter-spacing: 1px;
+        //color: #8bcb5d;
+        font-weight: 500;
+        font-family: "MullerBold", sans-serif;
+        margin-bottom: 47px;
+
+        @include mobile (){
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    }
+
+    .sait-logo {
+        max-width: 85px;
+        height: 40px;
+        margin-left: 10px;
+    }
+
+    .google {
+        position: relative;
+        z-index: 2;
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
+        img {
+            object-fit: contain;
+        }
+    }
+
+
+    ////////////////////////
+    /// 
+    /// 
+    ///
+    .revies {
+        display: flex;
+
+        @include desctop(){
+           flex-wrap: wrap;
+           //justify-content: center;
+           gap: 30px;
+        }
+    }
+  
+    .revies-item {
+        
+        &.first {
+            margin-right: 112px;
+            transition: all .5s;
+            @include desctop(){
+                margin-right: 0;
+            }
+
+            .revies-item-bottom  {
+                transition: all .3s;
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+
+            .revies-item-top {               
+               
+
+                a {
+                    transition: all .3s;
+                    &:hover {
+                    transform: scale(1.1);
+                    }
+                
+                }
+            }
+        }
+
+        &.second {
+            margin-right: 162px;
+            transition: all .5s;
+            cursor: pointer;
+            cursor: pointer;
+
+            @include desctop(){
+               margin-right: 0;
+            }
+
+            .revies-item-top {               
+               
+
+                    a {
+                        transition: all .3s;
+                        &:hover {
+                        transform: scale(1.1);
+                        }
+                    
+                    }
+            }
+
+
+            .revies-item-bottom  {
+                transition: all .3s;
+                a {
+                    display: flex;
+                    align-items: center;
+                    transition: all .3s;
+                        
+                    
+                }
+
+                img {
+                    width: 60px;
+                    height: 30px;
+                    display: block;
+                    margin-left: 10px;
+                    object-fit: contain;
+                }
+
+                
+                
+            }
+        }
+
+        &.feeting {
+            .revies-item-top {
+                font-size: 16px;
+                font-family: 'NunitoSemiBold', sans-serif;
+                font-weight: 600;
+                margin-bottom: 0;
+            }
+
+            .revies-item-bottom {
+                font-family: 'NunitoLight', sans-serif;
+                font-weight: 300;
+                text-decoration: none;
+            }
+        }
+
+        @include desctop(){
+            //width: 45%;
+        }
+    }
+
+    .revies-item-top {
+        display: flex;
+        align-items: center;
+        font-size: 13px;
+        margin-bottom: 10px;
+    }
+
+    .vk {
+        width: 27px;
+        height: 27px;
+        display: block;
+        flex-shrink: 0;
+        margin-left: 10px;
+    }
+
+    .home {
+
+    }
+
+    .revies-item-bottom {
+        font-size: 13px;
+            text-decoration: underline;
+        span {
+            font-size: 13px;
+            text-decoration: underline;
+        }
+    }
+    
+
+
+    @keyframes vkFrame {
+        from {
+          transform: scale(1);
+        }
+        to {
+            transform: scale(1.06);
+        }
+      }
+
+
+    ////////////////////////
+    /// 
+    ///    
+
+    .thanks-company {
+        position: absolute;
+        top: -31%;
+        right: -29%;
+
+        @include to(1880px){
+            position: static;
+        }
+    }
+
+    .thanks-company-wrapper {
+        position: relative;
+    }
+
+    .thanks-company-info {
+        position: absolute;
+        bottom: 20%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .heading__block {
+        position: relative;
+    }
+
+    .thanks-company-img {
+        height: 1052px;
+        max-width: 1052px;
+        width: 100%;
+
+        @include to(1880px) {
+            margin: 0 auto;
+        }
+
+        @include desctop() {
+            height: 660px;
+            max-width: 817px;
+        }
+
+        @include mobile() {
+            height: 386px;
+            max-width: 817px;
+            margin-top: -43px;
+
+            img {
+                object-fit: cover !important;
+            }
+        }
+
+        img {
+            object-fit:  contain;
+        }
+    }
+    
+    .thanks-company-avtor {
+        font-family: 'NunitoSemibold', sans-serif;
+        width: 244px;
+        height: 34px;
+        background-color: #2856a2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .thanks-company-doljnost {
+        font-family: 'NunitoLight', sans-serif;
+        height: 34px;
+        width: 244px;
+        background-color: #e8e8e8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #000;
+        margin-left: 15px;
+    }
+
+
+}
+
+.noLink {
+    pointer-events: none;
+}
+

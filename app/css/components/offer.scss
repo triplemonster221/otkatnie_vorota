@@ -1,0 +1,310 @@
+.offer{
+    //padding: 105px 0 359px;
+    
+    margin-top: 47px;
+    position: relative;
+
+    @include table () {
+        margin-top: 0;
+    }
+
+    @include mobile () {
+       padding-bottom: 40px;
+    }
+
+    .container {
+        padding: 105px 0 359px;
+
+        @include desctop () {
+            padding: 45px 0 260px;
+        } 
+
+        @include table () {
+            padding: 45px 0 200px;
+        } 
+
+        @include mobile () {
+            padding: 0 15px 0;
+        } 
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        background-image: url(../img/offer/left.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: right;
+        //width: 938px;
+        width: 48%;
+        height: 715px;
+        bottom: 0;
+        left: 0;
+
+        @include to(1560px) {
+            height: 498px;
+            bottom: 17%;
+        } 
+
+        @include desctop () {
+            height: 390px;
+        }
+
+        @include table () {
+            height: 263px;
+            bottom: 0;
+            background-size: contain;
+        }
+
+        @include mobile () {
+            bottom: -100px;
+            display: none;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        background-image: url(../img/offer/right.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        //width: 910px;
+        width: 45%;
+        height: 830px;
+        top: 0;
+        right: 0;
+
+        @include to(1560px) {
+            height: 525px;
+        }
+
+        @include desctop () {
+            height: 379px;
+        }
+
+        @include table () {
+            height: 269px;
+            top: 41%;
+            background-size: contain;
+        }
+
+        @include mobile () {
+            // height: 193px;
+            top: 70%;
+            display: none;
+        }
+    }
+
+    .offer-wrapper {
+        position: relative;
+
+
+    }
+
+    .offer-img  {
+        position: absolute;
+        top: -11px;
+        right: -33px;
+        z-index: 1;
+
+        @include to(1560px) {
+            width: 60%;
+            top: 34px;
+            right: 65px;
+            z-index: 1;
+        }
+
+        @include small () {
+            top: 102px;
+            right: 65px;
+        }
+
+        @include desctop () {
+            width: 60%;
+            top: 113px;
+            right: 6px;
+        }
+
+        @include table () {
+            top: 233px;
+            right: 42px;
+        }
+
+        @include mobile () {
+            position: static;
+            width: 100%;
+        }
+    }
+
+    .offer-inner {
+        max-width: 669px;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+    }
+    .offer-title {
+        font-family: 'Montserrat-ExtraBold', sans-serif;
+        font-style: normal;
+        font-weight: 800;
+        font-size: 48px;
+        line-height: 59px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin-bottom: 40px;
+        line-height: 130%;
+
+        @include desctop () {
+            font-size: 36px;
+        }
+
+        @include table () {
+            font-size: 25px;
+            max-width: 400px;
+            line-height: 130%;
+            margin-bottom: 20px;
+        }
+
+        @include mobile () {
+            font-size: 22px;
+        }
+    }
+
+    .offer-info {
+        font-family: 'Montserrat-Medium', sans-serif;
+        margin-bottom: 40px;
+        max-width: 634px;
+        width: 100%;
+
+        @include small () {
+            max-width: 470px;
+        }
+
+        @include mobile () {
+            margin-bottom: 20px;
+        }
+    }
+
+    .offer-img-slider {
+        position: absolute;
+        width: 1080px;
+        height: 648px;
+        top: -11px;
+        right: -33px;
+        z-index: 1;
+
+        @include to (1580px) {
+            width: 995px;
+        }
+
+        @include small () {
+            width: 871px;
+            right: -49px;
+            top: 40px;
+        }
+
+        @include desctop () {
+            width: 701px;
+            right: -49px;
+            top: 40px;
+        }
+
+        @include table () {
+            width: 650px;
+            right: -49px;
+            top: 164px;
+        }
+
+        @include mobile () {
+            position: static;
+            width: 456px;
+            height: 235px;
+        }
+
+        @include to (505px) {
+            max-width: 400px;
+        }
+
+        @include to (400px) {
+            max-width: 320px;
+            height: 150px;
+        }
+    }
+
+    .offer-img-slider-slider {
+        position: relative;
+    }
+
+    .offer-img-slider-img {
+        position: absolute;
+
+        @include to (1580px) {
+            height: 595px;
+        }
+
+        @include small () {
+            height: 512px;
+        }
+
+        @include desctop () {
+            height: 404px;
+        }
+
+        @include table () {
+            height: 370px;
+        }
+
+        @include mobile () {
+            height: 246px;
+        }
+
+        @include to (505px) {
+            height: 210px;
+        }
+        @include to (400px) {
+            height: 159px;
+        }
+    }
+
+    @-webkit-keyframes upElement {
+        0% {
+          left: 0%;
+        }
+        to {
+          left: 38%;
+        }
+      }
+
+    .offer-img-slider-midl {
+        //left: 38%;
+        animation-fill-mode: forwards;
+        animation-name: upElement;
+        animation-duration: 4s;
+        //animation-iteration-count: infinite;
+        animation-delay: 2s;
+        animation-fill-mode: forwards;
+    }
+
+    .offer-img-slider-right {
+        right: 45px;
+    }
+
+    .offer-img-slider-left {
+        left: 90px;
+
+        @include desctop () {
+            left: 69px;
+        }
+
+        @include mobile () {
+            left: 55px;
+        }
+
+        @include to (505px) {
+            left: 50px;
+        }
+
+        @include to (400px) {
+            left: 43px;
+        }
+    }
+}
