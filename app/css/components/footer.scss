@@ -2,6 +2,10 @@
     padding: 88px 0 87px;
     background: #2D2B2A;
 
+    @include table () {
+        padding: 55px 0 55px; 
+    }
+
     @include mobile () {
         padding: 35px 0 35px; 
     }
@@ -27,7 +31,7 @@
         @include table () {
             display: flex;
             flex-direction: column;
-            align-items: center;
+            //align-items: center;
             width: 100%;
         }
 
@@ -51,7 +55,7 @@
 
             @include table () {
                 flex-direction: column;
-                align-items: center;
+                //align-items: center;
             }
         }
 
@@ -68,7 +72,7 @@
 
             @include table () {
                 flex-direction: column;
-                align-items: center;
+                //align-items: center;
             }
         }
     }
@@ -81,13 +85,19 @@
     }
 
     .header-top__label {
-        @include mobile() {
-            text-align: center;
+        @include table() {
+            //text-align: center;
             max-width: 100%;
         }
     }
 
     .header-bottom__slogan {
+        @include table () {
+            order: -1;
+            width: 100%;
+            text-align: center;
+            //margin-bottom: 30px; 
+        }
         @include to (400px) {
             display: block;
         }
@@ -95,7 +105,7 @@
 
     .header-bottom__social {
         @include to (400px) {
-            justify-content: center;
+            //justify-content: center;
         }
     }
 

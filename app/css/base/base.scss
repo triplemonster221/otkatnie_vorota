@@ -154,6 +154,14 @@ html {
         //     line-height: 1em;
         // }
 
+        span {
+            @include mobile (){
+                font-size: 20px;
+                margin-bottom: 20px !important;
+                line-height: 24px !important;
+            }  
+        }
+
         @include mobile (){
             font-size: 20px;
             margin-bottom: 20px !important;
