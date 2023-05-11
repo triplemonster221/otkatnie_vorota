@@ -1,0 +1,150 @@
+.adv {
+    padding: 149px 0;
+    position: relative;
+
+    @include mobile () {
+        padding: 50px 0;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        background-image: url(../img/adv/left.png);
+        height: 746px;
+        width: 267px;
+        left: 0;
+        top: 0;
+        background-repeat: no-repeat;
+
+        @include small () {
+            height: 563px;
+            background-size: contain;
+        }
+
+        @include mobile () {
+            height: 256px;
+            width: 138px;
+        }
+
+        @include to (425px) {
+            height: 203px;
+            width: 79px;
+            top: -10px;
+        }
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        background-image: url(../img/adv/right.png);
+        width: 318px;
+        height: 286px;
+        right: 0;
+        bottom: 100px;
+        background-repeat: no-repeat;
+
+        @include to (1500px) {
+            bottom: 0;
+        }
+
+        @include small () {
+            width: 220px;
+            height: 201px;
+            background-size: contain;
+            bottom: 0;
+        }
+
+        @include mobile () {
+            width: 155px;
+            height: 141px;
+        }
+    }
+    
+    .adv-inner {
+        display: flex;
+        gap: 75px;
+        position: relative;
+        z-index: 1;
+
+        @include desctop (){
+            flex-direction: column;
+            gap: 20px;
+        }
+    }
+
+
+    .adv-title {
+        font-family: 'Montserrat-SemiBold', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 39px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin-bottom: 50px;
+        max-width: 589px;
+        width: 100%;
+
+        @include desctop (){
+            max-width: 100%;
+        }
+
+        @include mobile (){
+            font-size: 20px;
+            margin-bottom: 20px;
+            line-height: 130%;
+        }
+    }
+
+    .adv-subtitle {
+        font-family: 'Montserrat-SemiBold', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 20px;
+        line-height: 24px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        margin-bottom: 25px;
+
+        @include mobile (){
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+    }
+
+    .adv-list {
+        list-style: none;
+        padding-left: 0;
+    }
+
+    .adv-list__item {
+        padding-left: 30px;
+        position: relative;
+        margin-bottom: 30px;
+
+        @include mobile (){
+           margin-bottom: 15px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .mob-row {
+            @include mobile() {
+                display: block;
+            }
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #FFB800;
+        }
+    }
+}

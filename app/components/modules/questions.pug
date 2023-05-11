@@ -1,12 +1,15 @@
 block questions
-    section.questions
+    section.questions(data-bg="img/questions/bg.jpg" style="background-image:url();")
         .container
-            .questions-wrapper 
+            .questions-wrapper  
                 h2.questions-title.section-title У вас есть вопросы?
                 .questions-subtitle оставьте заявку и мы свяжемся с вами в течении 5 минут!
                 form.questions-form.sectionForm(action="#") 
                     input.input(type="text" placeholder="Имя" name="name")
-                    input.input.phone(type="text" placeholder="Телефон" name="phone")
-                    textarea.input(name="", cols="20", rows="5" placeholder="Введите сообщение") Введите сообщение
+                    input.input.phone(type="text" placeholder="Телефон" name="phone") 
+                    textarea.input(name="", cols="20", rows="5" placeholder="Введите сообщение")
                     button.btn.questions-btn(type="submit") Оставить заявку
-                    .ok Согласие на обработку персональных данных 
+                    .ok
+                        input(id="ok" class="checkbox" type="checkbox" name="montazh")
+                        label(for="ok" class="glass")
+                            |Согласие на обработку персональных данных 

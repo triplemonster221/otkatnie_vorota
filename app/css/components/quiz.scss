@@ -1,5 +1,5 @@
 .quiz {
-    background: url(../img/quiz/bg.png);
+    //background: url();
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
@@ -56,7 +56,40 @@
         }
 
         @include mobile(){
-            padding: 16px 20px 25px;
+            padding: 26px 20px 25px;
+            border-radius: 20px 20px 0 0;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            background-image: url(../img/quiz/bottom.png);
+            background-repeat: no-repeat;
+            width: 504px;
+            height: 208px;
+
+
+            @include to (1580px){
+                width: 398px;
+                height: 155px;
+                background-size: contain; 
+            }
+
+            @include table () {
+                width: 265px;
+                height: 112px;
+            }
+
+            @include mobile () {
+                width: 184px;
+                height: 89px;
+            }
+
+            @include to (380px) {
+                display: none;
+            }
         }
     }
 
@@ -68,6 +101,10 @@
             max-width: 657px;
             width: 100%;
             margin: 0 auto 60px;
+        }
+
+        @include mobile () {
+            max-width: 400px;
         }
 
         span {
@@ -99,10 +136,16 @@
 
     .quiz-wrap-row {
         //margin-bottom: 94px;
+
+        &.flex_quiz-wrap-row {
+            display: flex;
+            gap: 35px;
+        }
+
          label {
             display: inline-block;
-            width: 280px;
-            height: 215px;
+            // width: 280px;
+            // height: 215px;
             //border-radius: 10px;
             position: relative;
             cursor: pointer;
@@ -115,47 +158,56 @@
             background-position: center;
             background-size: contain;
             margin-right: 20px;
+            width: 100%;
 
-            @include to(1850px) {
-                width: 30%;
-                //height: 204px;
-                height: 165px;
-            }
+            // @include to(1850px) {
+            //     width: 30%;
+            //     //height: 204px;
+            //     height: 165px;
+            // }
 
-            @include small () {
-                height: 130px;
-            }
+            // @include small () {
+            //     height: 130px;
+            //     background-color: #5e5e5e;
+            // }
 
-            @include mobile () {
-                background-color: #5e5e5e;
-                height: 100px;
-                width: 30%;
-                margin-right: 10px;
-            }
+            // @include mobile () {
+                
+            //     height: 100px;
+            //     width: 30%;
+            //     margin-right: 10px;
+            // }
 
-            @include to (380px) {
-                width: 29.5%;
-            }
+            // @include to (384px) {
+            //     width: 29.5%;
+            // }
+
+            // @include to (355px) {
+            //     width: 29%;
+            // }
 
             &:last-child {
                 margin-right: 0;
             }
 
             h4 {
-                position: absolute;
+                //position: absolute;
                 bottom: -44px;
-                left: 50%;
-                transform: translateX(-50%);
+                //left: 50%;
+                //transform: translateX(-50%);
+                display: block;
                 width: 100%;
                 text-align: center;
+                margin-top: 40px;
 
                 @include small () {
                     bottom: -60px;
                 }
 
                 @include mobile () {
-                    font-size: 14px;
-                    bottom: -55px;
+                    // font-size: 14px;
+                    // bottom: -55px;
+                    font-size: 24px;
                 }
             }
         }
@@ -171,7 +223,7 @@
             content: "";
             position: absolute;
             left: 50%;
-            bottom: 0;
+            bottom: 40px;
             transform: translateX(-50%);
             //top: 0;
             width: 36px;
@@ -188,12 +240,13 @@
             }
 
             @include small() {
-                width: 25px;
-                height: 25px;
+                //width: 25px;
+                //height: 25px;
+                bottom: 48px;
             }
 
             @include mobile() {
-                bottom: -12px;
+                //bottom: -12px;
             }
         }
 
@@ -201,7 +254,7 @@
             content: "";
             position: absolute;
             left: 50%;
-            bottom: 0;
+            bottom: 40px;
             transform: translateX(-50%);
             width: 36px;
             height: 36px;
@@ -218,12 +271,13 @@
             }
 
             @include small() {
-                width: 25px;
-                height: 25px;
+                //width: 25px;
+                //height: 25px;
+                bottom: 48px;
             }
 
             @include mobile() {
-                bottom: -12px;
+                //bottom: -12px;
             }
         }
 
@@ -620,7 +674,7 @@
 
         @include mobile () {
             margin-bottom: 0;
-            padding-bottom: 85px;
+            padding-bottom: 45px;
             gap: 40px;
             border-bottom: 1px dotted #FFB800;
         }
@@ -633,8 +687,9 @@
     }
 
     .quiz-wrap-left {
-        max-width: 500px;
+        max-width: 425px;
         width: 100%;
+        flex-shrink: 0;
 
         @include to (1580px) {
             max-width: 360px;
@@ -652,6 +707,24 @@
     .quiz-wrap-right {
         max-width: 940px;
         width: 100%;
+
+        @include to (1850px) {
+            max-width: 815px;
+            width: 100%;
+        }
+
+        @include to (1580px) {
+            max-width: 720px;
+            width: 100%;
+        }
+
+        @include small () {
+            max-width: 535px;
+        }
+
+        @include desctop() {
+            max-width: 100%;
+        }
     }
 
     .parametrs input:not(checked) {
@@ -725,6 +798,136 @@
     .mob-none {
         @include mobile () {
             display: none;
+        }
+    }
+
+
+    .sliders-quiz {
+        @include mobile () {
+            margin-top: 50px;
+        }
+        .slick-prev:before, .slick-next:before {
+            display: none;
+        }
+
+        .slick-prev,
+        .slick-next {
+            top: -10%;
+            width: 65px;
+
+            @include mobile () {
+                width: 50px;
+                top: -8%;
+            }
+
+            img {
+                object-fit: contain;
+            }
+
+            &.slick-disabled {
+                opacity: .4;
+            }
+        }
+
+        .slick-prev {
+            left: auto;
+            right: 15%;
+
+            @include mobile () {
+                right: 20%;
+            }
+
+            @include to (400px) {
+                right: auto;
+                left: 0;
+            }
+
+        }
+
+        .slick-next {
+            right: 1%;
+        }
+    }
+
+    .sliders-quiz a {
+        outline: none;
+        position: relative;
+        display: block;
+    }
+
+
+    .quiz-image {
+        width: 280px;
+        height: 215px;
+        margin: 0 auto;
+        object-fit: contain;
+
+        @include to(1850px) {
+            width: 245px;
+            //height: 204px;
+            height: 165px;
+        }
+
+        @include to(1580px) {
+            width: 210px;
+        }
+
+        @include desctop () {
+            width: 190px;
+        }
+
+        @include table () {
+            width: 220px;
+        }
+
+        @include mobile () {
+            width: 100%;
+            height: auto;
+        }
+
+        img {
+            object-fit: contain;
+        }
+    }
+
+    .gate-slider {
+        display: flex;
+        gap: 35px;
+
+        @include small() {
+            
+        }
+    }
+
+
+    .quiz-box-price {
+        position: absolute;
+        font-family: 'Montserrat-Regular', sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 20px;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        padding: 8px 19px;
+        background: #31302C;
+        border-radius: 2px;
+        right: 10%;
+        top: 10%;
+
+        @include small(){
+            right: 15%;
+            top: 10%;
+        }
+
+        @include desctop(){
+            right: 10%;
+            top: 10%;
+        }
+
+        @include mobile(){
+            right: 5%;
+            top: 5%;
         }
     }
 

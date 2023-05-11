@@ -1,12 +1,12 @@
 block quiz
-    section.quiz
+    section.quiz(id="quiz" data-bg="img/quiz/bg.png" style="background-image:url();")
         .container
             .quiz-inner
                 h2.quiz-title.section-title Рассчитайте стоимость будущих ворот за 
                     span 1 минуту!
                 .quiz-wrap 
                     .quiz-wrap-rows 
-                        .quiz-wrap-left
+                        .quiz-wrap-left 
                             .calc-filter-row.montazh 
                                 .calc-row-top 
                                     p.calc-filter-title Сборка:
@@ -21,19 +21,47 @@ block quiz
                                         |Нет  
                         .quiz-wrap-right
                             h3.quiz-wrap__title Материал зашивки  
-                            .quiz-wrap-row 
-
-                                input( id="material-1" type="radio" name="material") 
-                                label(for="material-1" style="background-image: url(img/zashivka/bez_zashivki.jpg);") 
-                                    h4 без зашивки
-
-                                input( id="material-2" type="radio" name="material" ) 
-                                label(for="material-2" style="background-image: url(img/zashivka/profil.jpg);")
-                                    h4 Гиттер-Профиль
-
-                                input( id="material-3" type="radio" name="material" checked) 
-                                label(for="material-3" style="background-image: url(img/zashivka/3D.jpg);")
-                                    h4 3Д     
+                            .zashivka-slider.sliders-quiz
+                                .swiper-slide
+                                    .quiz-wrap-row 
+                                        a(href="img/zashivka/bez_zashivki.jpg" data-fancybox='1') 
+                                            .quiz-box-price 75 000 ₽
+                                            img(class="quiz-image" data-src="img/zashivka/bez_zashivki_small.jpg" src="img/1.jpg", alt="bez_zashivki")
+                                        input( data-type="bez" id="material-1" type="radio" value="без зашивки" name="material" checked) 
+                                        label(for="material-1") 
+                                            h4 без зашивки
+                                .swiper-slide
+                                    .quiz-wrap-row  
+                                        a(href="img/zashivka/profil.jpg" data-fancybox='2')
+                                            .quiz-box-price 75 000 ₽ 
+                                            img(class="quiz-image" data-src="img/zashivka/profil_small.jpg" src="img/1.jpg", alt="")  
+                                        input( data-type="profil" id="material-2" type="radio" value="Профиль" name="material" ) 
+                                        label(for="material-2")
+                                            h4 Профиль
+                                .swiper-slide
+                                    .quiz-wrap-row 
+                                        a(href="img/zashivka/3D.jpg" data-fancybox='3')
+                                            .quiz-box-price 75 000 ₽ 
+                                            img(class="quiz-image" data-src="img/zashivka/3D_small.jpg" src="img/1.jpg", alt="")
+                                        input( data-type="3d" id="material-3" type="radio" value="3Д" name="material" ) 
+                                        label(for="material-3")
+                                            h4 3Д 
+                                .swiper-slide
+                                    .quiz-wrap-row 
+                                        a(href="img/zashivka/proflist.jpg" data-fancybox='4') 
+                                            .quiz-box-price 75 000 ₽
+                                            img(class="quiz-image" data-src="img/zashivka/proflist_small.jpg" src="img/1.jpg", alt="")
+                                        input( data-type="proflist" id="material-4" type="radio" value="Профлист" name="material" ) 
+                                        label(for="material-4")
+                                            h4 Профлист
+                                .swiper-slide
+                                    .quiz-wrap-row 
+                                        a(href="img/zashivka/shtaketnik.jpg" data-fancybox='5')
+                                            .quiz-box-price 75 000 ₽ 
+                                            img(class="quiz-image" data-src="img/zashivka/shtaketnik_small.jpg" src="img/1.jpg", alt="")
+                                        input( data-type="shtaketnik" id="material-5" type="radio" value="Штакетник" name="material" ) 
+                                        label(for="material-5")
+                                            h4 Штакетник 
                     .quiz-wrap-rows 
                         .quiz-wrap-left
                             h2.quiz-wrap__title Укажите размеры проема ворот:
@@ -42,43 +70,37 @@ block quiz
                                     p.calc-title Ширина проема (Mетр)
                                     //input.calc-inp.range-people(type="text" READONLY)
                                 .calc-row-content     
-                                    input.calc-range.slider(type="range" min="1" max="6" value="6" step="0.1")
+                                    input.calc-range.slider(type="range" min="3" max="6" value="6" step="1")
                                     #selector 
                                         #selectorBtn 12
                                     #selectorvalue 
-                                    #minNumber 1
+                                    #minNumber 3
                                     #maxNumber 6 
                             .bf_calc-row 
                                 .calc-filter-title.mob-none замок
                                 .bf_calc__wrapper.parametrs
                                     input(data-dostavka="1"  id="zamok" class="checkbox" type="checkbox" name="zamok") 
                                     label(for="zamok" ) встроенный замок
-                            //- .calc-row 
-                            //-     .calc-row-top 
-                            //-         p.calc-title Высота проема (Mетр)
-                            //-         //input.calc-inp.range-people(type="text" READONLY)
-                            //-     .calc-row-content     
-                            //-         input.calc-range.slider(type="range" min="1" max="3" value="1" step="0.1")
-                            //-         #selector 
-                            //-             #selectorBtn 
-                            //-         #selectorvalue 
-                            //-         #minNumber 1
-                            //-         #maxNumber 3
                         .quiz-wrap-right
                             h3.quiz-wrap__title Делаем ли калитку:
-                            .quiz-wrap-row 
+                            //.quiz-wrap-row.flex_quiz-wrap-row
+                            .gate-slider.sliders-quiz
+                                .quiz-box-wrapper.quiz-wrap-row 
+                                    a(class="quiz-box-link" href="img/kalitka/vstroennaiz-proflist.jpg" data-fancybox='6') 
+                                        .quiz-box-price 75 000 ₽
+                                        img( data-type="vstroena" class="quiz-image" data-src="img/kalitka/vstroennaiz-proflist_small.jpg" src="img/1.jpg", alt="")
+                                    input( id="gate-1" type="radio" name="gate" checked) 
+                                    label(for="gate-1") 
+                                        h4 Встроенная калитка
+                                .quiz-box-wrapper.quiz-wrap-row
+                                    a(class="quiz-box-link" href="img/kalitka/rudom-proflist.jpg" data-fancybox='7') 
+                                        .quiz-box-price 75 000 ₽
+                                        img(data-type="rudom" class="quiz-image" data-src="img/kalitka/rudom-proflist__small.jpg" src="img/1.jpg", alt="")
+                                    input( id="gate-2" type="radio" name="gate" ) 
+                                    label(for="gate-2")
+                                        h4 Рядом стоящая
 
-                                input( id="gate-1" type="radio" name="gate") 
-                                label(for="gate-1" style="background-image: url(img/kalitka/vstroennaiz-profil.jpg);") 
-                                    h4 Встроенная калитка
-
-                                input( id="gate-2" type="radio" name="gate" ) 
-                                label(for="gate-2" style="background-image: url(img/kalitka/rudom-stouachia.jpg);")
-                                    h4 Рядом стоящаяя
-
-                                input( id="gate-3" type="radio" name="gate" checked) 
-                                label(for="gate-3" style="background-image: url(img/kalitka/rudom-stouachia-shtaketnik.jpg);")
-                                    h4 рядом стоящая штакетник
+                               
                     .quiz-wrap-rows 
                         .quiz-wrap-left
                             .calc-filter-row.color 
@@ -100,22 +122,32 @@ block quiz
                                     label(for="dostavka" ) комплект+монтаж
                         .quiz-wrap-right
                             h3.quiz-wrap__title Основание:
-                            .quiz-wrap-row 
-
-                                input( id="footing-1" type="radio" name="footing") 
-                                label(for="footing-1" style="background-image: url(img/method-montaja/svinchovie-svai.jpg);") 
-                                    h4 винтовые сваи
-
-                                input( id="footing-2" type="radio" name="footing" ) 
-                                label(for="footing-2" style="background-image: url(img/method-montaja/betonnaia-tumba.jpg);")
-                                    h4 бетонная тумба
-
-                                input( id="footing-3" type="radio" name="footing" checked) 
-                                label(for="footing-3" style="background-image: url(img/method-montaja/bethonnaiz-plita.jpg);")
-                                    h4 бетонная плита            
+                            //.quiz-wrap-row.flex_quiz-wrap-row 
+                            .montaj-slider.sliders-quiz
+                                .quiz-box-wrapper.quiz-wrap-row 
+                                    a(href="img/method-montaja/svinchovie-svai.jpg" data-fancybox='8') 
+                                        .quiz-box-price 75 000 ₽
+                                        img(class="quiz-image" data-src="img/method-montaja/svai.jpg" src="img/1.jpg", alt="")
+                                    input( id="footing-1" type="checkbox" name="footing") 
+                                    label(for="footing-1") 
+                                        h4 винтовые сваи
+                                .quiz-box-wrapper.quiz-wrap-row
+                                    a(href="img/method-montaja/betonnaia-tumba.jpg" data-fancybox='9') 
+                                        .quiz-box-price 75 000 ₽
+                                        img(class="quiz-image" data-src="img/method-montaja/tumba.jpg" src="img/1.jpg", alt="")
+                                    input( id="footing-2" type="checkbox" name="footing" ) 
+                                    label(for="footing-2")
+                                        h4 бетонная тумба
+                                .quiz-box-wrapper.quiz-wrap-row
+                                    a(href="img/method-montaja/bethonnaiz-plita.jpg" data-fancybox='10') 
+                                        .quiz-box-price 75 000 ₽
+                                        img(class="quiz-image" data-src="img/method-montaja/plita.jpg" src="img/1.jpg", alt="")
+                                    input( id="footing-3" type="checkbox" name="footing") 
+                                    label(for="footing-3")
+                                        h4 бетонная плита            
                 .quiz-result 
                     .quiz-result__img
-                        img(src="img/quiz/0.jpg", alt="")
+                        img(data-src="img/quiz/0.jpg" src="img/1.jpg", alt="")
                     .quiz-result__info 
                         h2.quiz-wrap__title Цена:
                         .quiz-result__summ 75 000 ₽

@@ -55,8 +55,101 @@ document.addEventListener('DOMContentLoaded', function() {
 
   burger();
 
+  $('.zashivka-slider').slick({
+    infinite: false,
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    arrows: true,
+    prevArrow: '<button type="button" class="slick-prev"><img src="../img/portfolio/left.svg"></button>',
+    nextArrow: '<button type="button" class="slick-next"><img src="../img/portfolio/right.svg"></button>',
+    responsive: [
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+      {
+        breakpoint: 1250,
+        settings: {
+          slidesToShow: 2,
+        }
+      }
+    ]
+  });
+
+  $('.montaj-slider').slick({
+    slidesToShow: 3,
+    infinite: false,
+    slidesToScroll: 1,
+    arrows: true,
+    prevArrow: '<button type="button" class="slick-prev"><img src="../img/portfolio/left.svg"></button>',
+    nextArrow: '<button type="button" class="slick-next"><img src="../img/portfolio/right.svg"></button>',
+    responsive: [
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 1,
+        }
+      },
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 992,
+        settings: {
+          slidesToShow: 3,
+        }
+      },
+        {
+          breakpoint: 1250,
+          settings: {
+            slidesToShow: 2,
+          }
+        }
+        
+      ]
+  })
+
+  if($(window).width() < 650) {
+    $('.gate-slider').slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      infinite: false,
+      arrows: true,
+      prevArrow: '<button type="button" class="slick-prev"><img src="../img/portfolio/left.svg"></button>',
+      nextArrow: '<button type="button" class="slick-next"><img src="../img/portfolio/right.svg"></button>',
+      // responsive: [
+      //     {
+      //       breakpoint: 1250,
+      //       settings: {
+      //         slidesToShow: 2,
+      //       }
+      //     }
+      //   ]
+    })
+  }
+
+
+
+
   const portfolioSwiper = new Swiper('.portfolio-slider', {
-      slidesPerView: 2,
+      slidesPerView: 1,
       spaceBetween: 30,
       arrows: false,
       dots: true,
@@ -64,22 +157,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
       //loop: true,
       breakpoints: {
-        // when window width is >= 320px
-        // 320: {
-        //   slidesPerView: 2,
-        //   spaceBetween: 20
-        // },
-        // when window width is >= 480px
         650: {
           slidesPerView: 2,
           spaceBetween: 30,
           arrows: true,
           dots: false,
         },
-        // when window width is >= 640px
         992: {
           slidesPerView: 3,
-          //spaceBetween: 40
         }
       },
   
@@ -99,6 +184,8 @@ document.addEventListener('DOMContentLoaded', function() {
     //   el: '.swiper-scrollbar',
     // },
   });
+
+
 
 
   let sliderContent = document.querySelectorAll('.calc-row');
@@ -127,6 +214,8 @@ document.addEventListener('DOMContentLoaded', function() {
       }
   });
 
+
+
   // function showUpp(){
   //   let shopTotal = document.querySelector('.total-show ');
   //   let rangePeople = document.querySelector('.range-people');
@@ -139,129 +228,6 @@ document.addEventListener('DOMContentLoaded', function() {
   //   shopTotal.innerHTML = summ;
   // }
 //слайдер в оффере=====================
-
-  // if (window.innerWidth <= 768) {
-  //   $('.offer-slider').slick({
-  //     //slidesToShow: 3,
-  //     //adaptiveHeight: true,
-  //     //dots: false,
-  //     //arrows: false,
-  //     //swipe: true,
-  //     settings: "unslick",
-  //     responsive: [
-  //         {
-  //           breakpoint: 650,
-  //           settings: {
-  //             slidesToShow: 1,
-  //             dots: true,
-  //             arrows: false,
-  //             settings: "unslick",
-  //           }
-  //         }
-  //       ]
-  //   })
-
-  // }
-
-
-
-//значки цифр для слайдера слик ============================
-  // var helpers = {
-  //   addZeros: function (n) {
-  //       return (n < 10) ? '' + n : '' + n;
-  //   }
-  // };
-
-  // function sliderInit() {
-  //   var $slider = $('.recomendation-slider');
-  //   $slider.each(function() {
-  //     var $sliderParent = $(this).parent();
-  //     $(this).slick({
-  //       slidesToShow: 1,
-  //       slidesToScroll: 1,
-  //       dots: false,
-  //       infinite: true,
-  //       responsive: [
-  //         {
-  //           breakpoint: 767,
-  //           settings: {
-  //             adaptiveHeight: true
-  //           }
-  //         }
-  //       ]
-  //     });
-  
-  //     if ($(this).find('.recomendation-content').length > 1) {
-  //       $(this).siblings('.slides-numbers').show();
-  //     }
-  
-  //     $(this).on('afterChange', function(event, slick, currentSlide){
-  //       $sliderParent.find('.slides-numbers .active').html(helpers.addZeros(currentSlide + 1));
-  //     });
-  
-  //     var sliderItemsNum = $(this).find('.slick-slide').not('.slick-cloned').length;
-  //     $sliderParent.find('.slides-numbers .total').html(helpers.addZeros(sliderItemsNum));
-
-  //   });
-  // };
-    
-  // function sliderdirection() {
-  //     var $slider = $('.directions-slider');
-  //     $slider.each(function() {
-  //       var $sliderParent = $(this).parent();
-  //       $(this).slick({
-  //         slidesToShow: 1,
-  //         slidesToScroll: 1,
-  //         dots: false,
-  //         infinite: true,
-  //         //fade: true,
-  //         responsive: [
-  //           {
-  //             breakpoint: 767,
-  //             settings: {
-  //               //adaptiveHeight: true
-  //             }
-  //           }
-  //         ]
-  //       });
-    
-  //       if ($(this).find('.directions-content').length > 1) {
-  //         $(this).siblings('.slides-numbers').show();
-  //       }
-    
-  //       $(this).on('afterChange', function(event, slick, currentSlide){
-  //         $sliderParent.find('.slides-numbers .active').html(helpers.addZeros(currentSlide + 1));
-  //       });
-    
-  //       var sliderItemsNum = $(this).find('.slick-slide').not('.slick-cloned').length;
-  //       $sliderParent.find('.slides-numbers .total').html(helpers.addZeros(sliderItemsNum));
-    
-  //     });
-      
-  // };
-      
-  // if (document.documentElement.clientWidth < 650) {
-  //   $('.recomendation-slider').slick({
-  //       slidesToShow: 1,
-  //       dots: true,
-  //       arrows: false,
-  //       settings: "unslick"
-  //   })
-  // } else {
-  //   sliderInit();
-  // }; 
-
-
-  // if (document.documentElement.clientWidth < 650) {
-  //   $('.directions-slider').slick({
-  //       slidesToShow: 1,
-  //       dots: true,
-  //       arrows: false                
-  //   })
-  // } else {
-  //   sliderdirection();
-  // };
-        
 
 // вывод модальных окон ============================
     
@@ -471,61 +437,6 @@ document.addEventListener('DOMContentLoaded', function() {
 //---------------STOP ANIMATION============================
 
 
-// ============================tabs============================
-
-  // function tabs(headerSelector, tabSelector, contentSelector, activeClass) {
-  //   const header = document.querySelector(headerSelector),
-  //       tab = document.querySelectorAll(tabSelector),
-  //       content = document.querySelectorAll(contentSelector)
-
-  //   function hdieTabContent(){
-     
-  //       content.forEach(elem => {
-  //         elem.classList.remove(activeClass);
-  //       })
-
-  //       tab.forEach(elem => {
-  //           elem.classList.remove(activeClass);
-  //       })
-     
-       
-  //   }
-
-  //   function showTabContent(i = 0) {
-   
-  //       content[i].classList.add(activeClass);
-  //       tab[i].classList.add(activeClass);
-    
-        
-  //   }
-
-    
-  //     hdieTabContent();
-  //     showTabContent();
-    
-  //   header.addEventListener('click', (e) => {
-  //       const target = e.target;
-  //       if(target.classList.contains(tabSelector.replace(/\./, ''))){
-  //           tab.forEach((item, i) => {
-  //               if(target == item) {
-  //                   console.log(i);
-  //                   hdieTabContent();
-  //                   showTabContent(i);
-  //               }
-  //           })
-  //       }
-  //   })
-
-  // }
-
-  //--проверка на существование табов 
-
-  // let directionWrapper = document.querySelector('.direction-wrapper');
-  // if(directionWrapper){
-  //   tabs('.direction-tabs', '.direction-tab','.direction-content','active');
-  // }
-
-// ============================STOP tabs============================
 
 
 // ============================STOP DATE============================
@@ -538,32 +449,116 @@ document.addEventListener('DOMContentLoaded', function() {
 // ============================STOP DATE============================
 
 
-//--------SHOW-MOREE============================
-  // function showMore(){
-  //   let btns = document.querySelectorAll('.reviews-box__moree');
+function changeGate(){
+  let gateImages = document.querySelectorAll('.gate-slider .quiz-image');
+  let zashivkaInputs = document.querySelectorAll('.zashivka-slider input');
+  
+  zashivkaInputs.forEach(el=>{
+    el.addEventListener('click', function(){
+      if(el.dataset.type == '3d') {
+        gateImages.forEach(img=>{
+          if(img.dataset.type == 'vstroena') {
+            img.src = 'img/kalitka/vstroennaia3d_small.jpg';
+            let parent = img.closest('a');
+            parent.href="img/kalitka/vstroennaia 3d.jpg"
+          }else if (img.dataset.type == 'rudom'){
+            img.src = 'img/kalitka/rudom-3d_small.jpg';
+            let parent = img.closest('a');
+            parent.href="img/kalitka/rudom-3d.jpg"
+          }
+        })
+      }
+      else if(el.dataset.type == 'proflist') {
+        gateImages.forEach(img=>{
+          if(img.dataset.type == 'vstroena') {
 
-  //   btns.forEach(el => {
-  //     el.addEventListener('click', function(){
-  //       let wrapper = this.closest('.reviews-box');
-  //       wrapper.classList.toggle('_active');
-  //     })
-  //   })
-  // }
-  // showMore()
+            img.src = 'img/kalitka/vstroennaiz-proflist_small.jpg';
+            let parent = img.closest('a');
+            parent.href="img/kalitka/vstroennaiz-proflist.jpg"
+            
+          }else if (img.dataset.type == 'rudom'){
 
-//--------STOP SHOW-MOREE============================
+            img.src = 'img/kalitka/rudom-proflist__small.jpg';
+            let parent = img.closest('a');
+            parent.href="img/kalitka/rudom-proflist.jpg"
+            
+          }
+        })
 
-//--------akkardion============================
-  // function accardion(){
-  //   let accardionTop = document.querySelectorAll('.accardion-top');
-    
-  //   accardionTop.forEach(el => {
-  //       el.addEventListener('click', function(){
-  //          this.closest('.accardion-box').classList.toggle('_active'); 
-  //       })
-  //   })
-  // }
+      }
+      else if(el.dataset.type == 'shtaketnik') {
+        gateImages.forEach(img=>{
+          if(img.dataset.type == 'vstroena') {
 
-  // accardion();
-//--------STOP akkardion============================
+            img.src = 'img/kalitka/vstroennaia-shtaket.jpg';
+            let parent = img.closest('a');
+            parent.href="img/kalitka/vstroennaia-shtaketnik.jpg"
+            
+          }else if (img.dataset.type == 'rudom'){
+
+            img.src = 'img/kalitka/rudom-shtaket_small.jpg';
+            let parent = img.closest('a');
+            parent.href="img/kalitka/rudom-shtaket.jpg"
+            
+          }
+        })
+      }else {
+        gateImages.forEach(img=>{
+          if(img.dataset.type == 'vstroena') {
+
+            img.src = 'img/kalitka/vstroennaia-shtaket.jpg';
+            let parent = img.closest('a');
+            parent.href="img/kalitka/vstroennaia-shtaketnik.jpg"
+            
+          }else if (img.dataset.type == 'rudom'){
+
+            img.src = 'img/kalitka/rudom-shtaket_small.jpg';
+            let parent = img.closest('a');
+            parent.href="img/kalitka/rudom-shtaket.jpg"
+            
+          }
+        })
+      }
+    })
+  })
+
+  
+
+}
+
+changeGate();
+
+
+
+$("[data-fancybox]").fancybox({
+  wheel: false,
+  slideShow  : false,
+})
+
+
+if(document.querySelectorAll('img[data-src]')) {
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.src = entry.target.dataset.src
+        observer.unobserve(entry.target)
+      }
+    })
+  }, { threshold: 0.5 })
+  document.querySelectorAll('img[data-src]').forEach(img => observer.observe(img))
+}
+
+if(document.querySelectorAll('[data-bg]')){
+  const observerBg = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        console.log(entry.target.dataset.bg)
+        entry.target.style.backgroundImage = "url('"+entry.target.dataset.bg+"')"
+        observer.unobserve(entry.target)
+      }
+    })
+  }, { threshold: 0.5 })
+  document.querySelectorAll('[data-bg]').forEach(el => observerBg.observe(el))
+}
+
 })

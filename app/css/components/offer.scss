@@ -4,8 +4,13 @@
     margin-top: 47px;
     position: relative;
 
+    @include desctop () {
+        padding-bottom: 200px;
+    }
+
     @include table () {
         margin-top: 0;
+        padding-bottom: 0;
     }
 
     @include mobile () {
@@ -20,7 +25,7 @@
         } 
 
         @include table () {
-            padding: 45px 0 200px;
+            padding: 45px 0 280px;
         } 
 
         @include mobile () {
@@ -70,7 +75,7 @@
         background-size: cover;
         //width: 910px;
         width: 45%;
-        height: 830px;
+        height: 768px;
         top: 0;
         right: 0;
 
@@ -175,6 +180,10 @@
         max-width: 634px;
         width: 100%;
 
+        @include to (1580px) {
+            max-width: 400px;
+        }
+
         @include small () {
             max-width: 470px;
         }
@@ -186,48 +195,58 @@
 
     .offer-img-slider {
         position: absolute;
-        width: 1080px;
-        height: 648px;
-        top: -11px;
-        right: -33px;
+        width: 928px;
+        height: 328.2px;    
+        top: 135px;
+        right: -40px;
         z-index: 1;
 
+        
+
+        @include to (1850px) {
+            width: 820px;
+            top: 225px;
+        }
+
         @include to (1580px) {
-            width: 995px;
+            top: 122px;
+            right: 31px;
         }
 
         @include small () {
-            width: 871px;
-            right: -49px;
-            top: 40px;
+            width: 600px;
+            height: 260px;
+            top: 217px;
         }
 
         @include desctop () {
-            width: 701px;
-            right: -49px;
-            top: 40px;
-        }
-
-        @include table () {
-            width: 650px;
-            right: -49px;
-            top: 164px;
+            width: 459px;
+            height: 206px;
+            top: 337px;
+            right: 81px;
         }
 
         @include mobile () {
             position: static;
-            width: 456px;
-            height: 235px;
+            // width: 456px;
+            // height: 235px;
         }
 
-        @include to (505px) {
-            max-width: 400px;
+        @include to (550px) {
+            width: 379px;
+            height: 180px;
         }
 
-        @include to (400px) {
-            max-width: 320px;
-            height: 150px;
+        @include to (460px) {
+            max-width: 277px;
+            height: 145px;
+            //height: 150px;
         }
+
+        @include to (360px) {
+            width: 211px;
+            height: 120px;
+         }
     }
 
     .offer-img-slider-slider {
@@ -237,74 +256,118 @@
     .offer-img-slider-img {
         position: absolute;
 
-        @include to (1580px) {
-            height: 595px;
+        @include to (1850px) {
+            height: 296px;
         }
 
         @include small () {
-            height: 512px;
+            height: 210px;
         }
 
         @include desctop () {
-            height: 404px;
+            height: 165px;
         }
 
         @include table () {
-            height: 370px;
+            //height: 370px;
         }
 
         @include mobile () {
-            height: 246px;
+            //height: 246px;
         }
 
-        @include to (505px) {
-            height: 210px;
+        @include to (550px) {
+           height: 136px;
         }
-        @include to (400px) {
-            height: 159px;
+        @include to (460px) {
+           //height: 159px;
+           height: 100px;
         }
+        @include to (360px) {
+            height: 75px;
+         }
     }
 
     @-webkit-keyframes upElement {
         0% {
-          left: 0%;
+            transform: translateX(65%);
         }
         to {
-          left: 38%;
+            transform: translateX(0);
         }
       }
 
     .offer-img-slider-midl {
-        //left: 38%;
+        right: 14px;
+        top: 20px;
+        transform: translateX(65%);
         animation-fill-mode: forwards;
         animation-name: upElement;
         animation-duration: 4s;
-        //animation-iteration-count: infinite;
         animation-delay: 2s;
         animation-fill-mode: forwards;
+        z-index: 2;
     }
 
     .offer-img-slider-right {
-        right: 45px;
+        z-index: 3;
+        left: 0;
+        @include to (1850px) {
+            height: 320px
+        }
+
+        @include small () {
+            height: 237px;
+            top: 5px;
+        }
+
+        @include desctop () {
+            height: 173px;
+            top: 14px;
+        
+        }
+
+        @include to (550px) {
+            height: 145px;
+            top: 14px;
+        }
+
+        @include to (460px) {
+            height: 105px;
+            top: 15px;
+        }
+
+        @include to (360px) {
+            height: 79px;
+            top: 18px;
+         }
     }
 
     .offer-img-slider-left {
-        left: 90px;
+        //left: 90px;
+        right: -5.5%;
+        top: 20px;
+
+        @include to (1850px) {
+            right: 5.5%;
+            right: -2%;
+        }
 
         @include desctop () {
-            left: 69px;
+            //left: 69px;
+            right: 0;
         }
 
         @include mobile () {
-            left: 55px;
+            right: -5%;
         }
 
-        @include to (505px) {
-            left: 50px;
+        @include to (550px) {
+            // left: 50px;
         }
 
         @include to (400px) {
-            left: 43px;
+            //left: 43px;
         }
     }
 }
